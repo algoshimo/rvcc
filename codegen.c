@@ -70,14 +70,17 @@ static void genExpr(Node *Nd) {
       // a0==a1
       // a0=a0^a1, sltiu a0, a0, 1
       // 等于0则置1
+      //set if equal to zero
       printf("  seqz a0, a0\n");
     else
       // a0!=a1
       // a0=a0^a1, sltu a0, x0, a0
       // 不等于0则置1
+      //set if not equal to zero
       printf("  snez a0, a0\n");
     return;
   case ND_LT:
+    //set less than
     printf("  slt a0, a0, a1\n");
     return;
   case ND_LE:
